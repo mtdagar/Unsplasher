@@ -20,6 +20,8 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
+
+        buildConfigField("String", "API_KEY", API_KEY)
     }
 
     buildTypes {
@@ -80,9 +82,10 @@ dependencies {
 
     // Room Components
     implementation "androidx.room:room-runtime:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation  "androidx.room:room-ktx:$room_version"
     implementation "androidx.room:room-paging:2.5.0-alpha01"
-    kapt "androidx.room:room-ktx:$room_version"
+
 
     // Dagger - Hilt
     implementation "com.google.dagger:hilt-android:2.38.1"
